@@ -1,0 +1,34 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.result {
+  @include col;
+  @include alignCenter;
+  padding: $app-padding;
+}
+
+.header {
+  font-size: 3rem;
+  color: $text-heavy;
+}
+
+.userContainer {
+  @include col;
+  @include alignCenter;  
+  margin: $large-margin;
+  border-radius: $border-radius;
+  border: 0.0625rem solid $form-border;
+
+}
+
+.avatar {
+  width: 200px;
+  height: 200px;
+  background-color: $background;
+}
+
+.username {
+  color: $text-heavy;
+  font-size: 1rem;
+  margin: $small-margin;
+}

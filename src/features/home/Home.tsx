@@ -1,19 +1,37 @@
 import React, { useState, useEffect } from 'react';
-import './App.scss';
-import Counter from './features/counter/Counter'
-import CandidateList from './features/candidate_list/CandidateList'
-import { mockUsers } from './mocks/users'
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router';
+import './Home.scss';
+import Counter from '../counter/Counter'
+import CandidateList from '../candidate_list/CandidateList'
+import { User } from '../../types'
+import { mockUsers } from '../../mocks/users'
+import {
+  setUser
+} from '../result/resultSlice'
 
-function App() {
+function Home() {
+  const history = useHistory()
+  const dispatch = useDispatch()
   const [timeInput, setTimeInput] = useState<string>('')
   const [totalSeconds, setTotalSeconds] = useState<number>(0)
   const [timerId, setTimerId] = useState<any>(-1)
   const [secondsLeft, setSecondsLeft] = useState<number>(0)
 
+  const chooseWinner = (): User => {
+    const index = Math.floor(Math.random() * 100) % mockUsers.length
+    const chosen = mockUsers[index]
+    return chosen
+  }
+
   useEffect(() => {
     if (secondsLeft <= 0) return
     const id = setTimeout(() => {
       setSecondsLeft(secondsLeft - 1)
+      if (secondsLeft === 1) {
+        dispatch(setUser(chooseWinner()))
+        history.push('/result')
+      }
     }, 1000)
     setTimerId(id)
     return () => {
@@ -34,7 +52,7 @@ function App() {
   }
 
   return (
-    <div className="app">
+    <div className="home">
       <div className="panel">
         抽獎時間
         <div className="row alignCenter marginVertical">
@@ -63,4 +81,4 @@ function App() {
   )
 }
 
-export default App;
+export default Home;

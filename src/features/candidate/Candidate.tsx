@@ -9,8 +9,14 @@ interface CandidateProp {
 function Candidate(props: CandidateProp) {
   const { user } = props
   return (
-    <div className={styles.Candidate}>
-      { user.username }
+    <div className={styles.candidate}>
+      <img
+        className={styles.profilePic}
+        src={user.avatar}
+      />
+      <div className={styles.username}>
+        { user.username }
+      </div>
     </div>
   )
 }

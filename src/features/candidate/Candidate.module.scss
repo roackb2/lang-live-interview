@@ -1,7 +1,18 @@
-@import 'styles/mixins.scss';
-@import 'styles/variables.scss';
+@import 'assets/styles/mixins.scss';
+@import 'assets/styles/variables.scss';
 
-.Candidate {
+.candidate {
   @include row;
+  @include alignCenter;
   padding: $list-item-padding-vertical $list-item-padding-horizontal;
+}
+
+.profilePic {
+  width: 3.125rem;
+  height: 3.125rem;
+}
+
+.username {
+  margin-left: $small-margin;
+  color: $text-heavy;
 }
