@@ -1,0 +1,30 @@
+@mixin row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin col {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin alignCenter {
+  align-items: center;
+}
+
+@mixin justifyCenter {
+  justify-content: center;
+}
+
+@mixin button {
+  padding: $button-padding-vertical $button-padding-horizontal;
+  background-color: $main;
+  color: $text-heavy;
+  border-radius: $border-radius;
+}
+
+@mixin input {
+  border: 0.0625rem solid $form-border;
+  border-radius: $border-radius;
+  padding: $input-padding-vertical $input-padding-horizontal;
+}

@@ -1,0 +1,7 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+.Candidate {
+  @include row;
+  padding: $list-item-padding-vertical $list-item-padding-horizontal;
+}

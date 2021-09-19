@@ -1,0 +1,13 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+.CandidateList {
+  @include col;
+  width: 12.5rem;
+  height: 31.25rem;
+  overflow: scroll;
+  background-color: $background;
+  border: 0.0625rem solid $form-border;
+  border-radius: $border-radius;
+  padding: 0;
+}
