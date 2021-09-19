@@ -1,0 +1,11 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+.counter {
+  margin: $large-margin;
+}
+
+.timeLeft {
+  font-size: 3rem;
+  color: $main;
+}

@@ -1,10 +1,18 @@
 import React from 'react';
-import styles from './Counter.module.css';
+import styles from './Counter.module.scss';
+import moment from 'moment'
 
-function Counter() {
+interface CounterProp {
+  secondsLeft: number
+}
+
+
+function Counter(props: CounterProp) {
   return (
-    <div className="Counter">
-      counter
+    <div className={styles.counter}>
+      <div className={styles.timeLeft}>
+        { moment.unix(props.secondsLeft).format('mm:ss') }
+      </div>
     </div>
   )
 }

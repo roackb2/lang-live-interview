@@ -13,7 +13,7 @@ function CandidateList(props: CandidateListProp) {
   return (
     <div className={styles.CandidateList}>
       { users.map((user: User) => (
-        <Candidate user={user} />
+        <Candidate user={user} key={user.username} />
       ))}
     </div>
   )

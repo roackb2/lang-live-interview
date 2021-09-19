@@ -19,7 +19,7 @@
 @mixin button {
   padding: $button-padding-vertical $button-padding-horizontal;
   background-color: $main;
-  color: $text-heavy;
+  color: $text-light;
   border-radius: $border-radius;
 }
 
